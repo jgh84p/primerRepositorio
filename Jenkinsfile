@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker buld -t app.'
+        echo 'BUILD'
       }
     }
     stage('Test'){
