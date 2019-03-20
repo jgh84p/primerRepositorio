@@ -1,23 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Inicio') {
+    stage('Build') {
       steps {
-        echo 'Hola mundo'
+        sh 'docker buld -t app.'
       }
     }
-    post {
-      always{
-        echo 'mensaje desde el always de post'
-      }
-      
-      success {
-        echo 'mensaje desde el succes de post'
-      }
-    }
-    stage('Test2') {
+    stage('Test'){
+			steps{
+				echo 'TEST'
+			}
+		}		
+    stage('Deploy') {
       steps {
-        echo 'hola paso 2'
+        echo 'DEPLOY'
       }
     }
   }
