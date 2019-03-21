@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'BUILD'
+        sh 'docker build -t app:test .'
       }
     }
     stage('Test'){
-			steps{
-				echo 'TEST'
-			}
+	steps{
+		echo 'TEST'
+	}
 		}		
     stage('Deploy') {
       steps {
